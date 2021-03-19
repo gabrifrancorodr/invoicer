@@ -27,7 +27,6 @@ jobs:
         run: |
           gem install bundler --user-install
           export PATH="/home/runner/.gem/ruby/2.7.0/bin"
-          gem bundle update
       - name: Test App Action
         run: |
           bin/rails test
