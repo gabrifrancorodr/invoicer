@@ -23,7 +23,9 @@ jobs:
         run: |
           bin/rails test
       - name: Deploy App To Heroku
+        env: 
+        HEROKU_API_KEY: ${{ secrets.HEROKU_API_PRIVATE_KEY }}
         run: |
-          git push heroku main
-          bin/setup
-          bin/rails server
+          heroku container:login
+          heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+          heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
