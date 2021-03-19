@@ -25,7 +25,7 @@ jobs:
           ruby -v
       - name: Update Gem Info
         run: |
-          gem install bundler
+          gem install bundler --user-install
           bundle update
       - name: Test App Action
         run: |
