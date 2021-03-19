@@ -25,7 +25,7 @@ jobs:
           ruby -v
       - name: Update Gem Info
         run: |
-          export PATH="/home/runner/.gem/ruby/3.0.0/bin:$PATH"
+          export PATH="/home/runner/.gem/ruby/2.7.0/bin"
           gem install bundler --user-install
           bundle update
       - name: Test App Action
