@@ -23,13 +23,11 @@ jobs:
           curl -sSL https://get.rvm.io | bash -s stable
           source ~/.rvm/scripts/rvm
           rvm install 3.0.0
-          rvm use 3.0.0 --default
+          rvm use ruby-3.0.0 --default
           ruby -v
       - name: Update Gem Info
         run: |
-          echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
-          sudo apt-get install rubygems
-          gem install bundler
+          bundle update --ruby
           
       - name: Test App Action
         run: |
