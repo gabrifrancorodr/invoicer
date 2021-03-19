@@ -29,7 +29,7 @@ jobs:
         run: |
           sudo apt-get install rubygems
           gem install bundler
-          $HOME/.rubies/ruby-3.0.0/bin/bundle
+          echo 'export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"' >> ~/.bash_profile
       - name: Test App Action
         run: |
           bin/rails test
