@@ -24,8 +24,10 @@ jobs:
           source ~/.rvm/scripts/rvm
           rvm install 3.0.0
           rvm use 3.0.0 --default
+          ruby -v
       - name: Update Gem Info
         run: |
+          sudo apt-get install rubygems
           gem install bundler
           $HOME/.rubies/ruby-3.0.0/bin/bundle
       - name: Test App Action
