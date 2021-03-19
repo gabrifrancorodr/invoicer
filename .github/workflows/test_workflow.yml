@@ -12,6 +12,9 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
+      - name: Uninstall Default Ruby Version
+        run: |
+          sudo apt-get remove ruby2.7.0
       - name: Install Ruby 3.0
         run: |
           sudo apt update
