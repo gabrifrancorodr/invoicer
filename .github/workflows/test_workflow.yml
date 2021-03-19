@@ -24,7 +24,7 @@ jobs:
           bin/rails test
       - name: Deploy App To Heroku
         env: 
-        HEROKU_API_KEY: ${{ secrets.HEROKU_API_PRIVATE_KEY }}
+          HEROKU_API_KEY: ${{ secrets.HEROKU_API_PRIVATE_KEY }}
         run: |
           heroku container:login
           heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
