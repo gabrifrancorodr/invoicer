@@ -24,8 +24,8 @@ jobs:
           bin/rails test
       - name: Deploy App To Heroku
       - uses: akhileshns/heroku-deploy@v3.0.0
-          with: 
-            heroku_api_key: ${{ secrets.HEROKU_API_PRIVATE_KEY }}
-            heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-            heroku_email: ${{ secrets.HEROKU_EMAIL }}
-            usedocker: false
+        with: 
+          heroku_api_key: ${{ secrets.HEROKU_API_PRIVATE_KEY }}
+          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          usedocker: false
