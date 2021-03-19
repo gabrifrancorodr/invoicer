@@ -21,6 +21,10 @@ jobs:
           source ~/.rvm/scripts/rvm
           rvm install 3.0.0
           rvm use 3.0.0 --default
+      - name: Update Gem Info
+        run: |
+          gem install bundler
+          $HOME/.rubies/ruby-3.0.0/bin/bundle
       - name: Test App Action
         run: |
           bin/rails test
